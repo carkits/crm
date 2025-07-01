@@ -27,7 +27,7 @@ def handle_search(message):
     results = search_product(message.text)
     if results:
         for p in results[:1]:
-            msg = f"🔧 نام: {p['name']}
+            msg = f'''🔧 نام: {p["name"]}
 💵 قیمت: {p['price']} تومان
 📎 لینک: {p['permalink']}"
             bot.send_message(message.chat.id, msg)
