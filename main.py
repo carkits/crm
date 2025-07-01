@@ -27,9 +27,11 @@ def handle_search(message):
     results = search_product(message.text)
     if results:
         for p in results[:1]:
-            msg = f'''🔧 نام: {p["name"]}
-💵 قیمت: {p['price']} تومان
-📎 لینک: {p['permalink']}"
+            msg = (
+    f"🔧 نام: {p['name']}\n"
+    f"💵 قیمت: {p['price']} تومان\n"
+    f"📎 لینک: {p['permalink']}"
+)
             bot.send_message(message.chat.id, msg)
     else:
         btn = telebot.types.InlineKeyboardMarkup()
